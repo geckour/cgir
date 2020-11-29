@@ -159,7 +159,7 @@ class Infrared:
         # エッジを検出した場合
         if level == 0 or level == 1:
             if self.last_tick == 0:
-                self._pi.set_watchdog(self.gpio_rec, 100)  # watchdog設定
+                self._pi.set_watchdog(self.gpio_rec, 1000)  # watchdog設定
             else:
                 length = pigpio.tickDiff(self.last_tick, tick)
 
